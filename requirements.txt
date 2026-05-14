@@ -1,5 +1,5 @@
 streamlit
-tensorflow
+tensorflow-cpu
 librosa
 soundfile
 scikit-learn
@@ -7,3 +7,4 @@ pandas
 numpy
 matplotlib
 seaborn
+h5py
