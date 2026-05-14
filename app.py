@@ -4,7 +4,7 @@ import numpy as np
 import tensorflow as tf
 import pickle
 import tempfile
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 
 # Page Config
 st.set_page_config(
@@ -49,7 +49,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Load Model
-model = load_model("fixed_emotion_model.keras", compile=False)
+model = load_model("emotion_model.keras", compile=False)
 # Load Label Encoder
 with open("label_encoder.pkl", "rb") as file:
     label_encoder = pickle.load(file)
@@ -104,7 +104,7 @@ if uploaded_file is not None:
 
     features = extract_mfcc(temp_path)
 
-    features = features.reshape(1, 40, 1)
+    features = np.expand_dims(features, axis=0)
 
     prediction = model.predict(features)
 
