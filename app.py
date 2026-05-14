@@ -4,6 +4,7 @@ import numpy as np
 import tensorflow as tf
 import pickle
 import tempfile
+from keras.models import load_model
 
 # Page Config
 st.set_page_config(
@@ -48,8 +49,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Load Model
-model = tf.keras.models.load_model("emotion_model.h5", compile=False)
-
+model = load_model("emotion_model.h5", compile=False)
 # Load Label Encoder
 with open("label_encoder.pkl", "rb") as file:
     label_encoder = pickle.load(file)
