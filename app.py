@@ -49,7 +49,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Load Model
-model = load_model("emotion_model.h5", compile=False)
+model = load_model("fixed_emotion_model.keras", compile=False)
 # Load Label Encoder
 with open("label_encoder.pkl", "rb") as file:
     label_encoder = pickle.load(file)
