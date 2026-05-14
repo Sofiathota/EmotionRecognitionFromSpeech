@@ -1,5 +1,6 @@
 streamlit
-tensorflow==2.15.0
+tensorflow==2.12.0
+keras==2.12.0
 librosa
 soundfile
 scikit-learn
@@ -7,4 +8,4 @@ pandas
 numpy
 matplotlib
 seaborn
-h5py
+h5py==3.8.0
