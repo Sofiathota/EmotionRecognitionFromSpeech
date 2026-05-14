@@ -48,7 +48,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Load Model
-model = tf.keras.models.load_model("emotion_model.h5")
+model = tf.keras.models.load_model("emotion_model.h5", compile=False)
 
 # Load Label Encoder
 with open("label_encoder.pkl", "rb") as file:
